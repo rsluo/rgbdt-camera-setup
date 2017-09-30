@@ -52,9 +52,9 @@ Start the flir camera driver:
 $ sudo ./flir1
 ```
 
-Plug in the depth camera to a USB 3.0 port (the port *must* be USB 3.0). Navigate to the `librealsense/librealsense` folder. Start the depth camera and save the image frames:
+Plug in the depth camera to a USB 3.0 port (the port *must* be USB 3.0). Navigate to the `librealsense/librealsense` folder. Compile the `examples/run_rgbdt.cpp` file. Start the depth camera and save the image frames:
 ```
-./bin/cpp-tutorial-2-streams
+./bin/run_rgbdt
 ```
 
 Images are saved in the `librealsense/librealsense` folder.
