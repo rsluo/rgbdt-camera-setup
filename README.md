@@ -1,5 +1,7 @@
 # ego-rgbdt-camera-setup
 
+## Installing the drivers
+
 After installing a version of Ubuntu, you will need to install two sets of drivers. 
 
 ### 1. Intel Realsense SR300 (the depth camera)
@@ -40,3 +42,19 @@ Finally, run this command:
 ```
 $ /usr/bin/gcc '-I/usr/include/libusb-1.0'  -o flir1 flir8g-mint.c -lusb-1.0 -lm
 ```
+
+## Running the setup
+
+To collect data, start by turning on the laptop with the thermal camera connected to a USB port, but the depth camera disconnected. Check with `ls` (e.g. `ls /dev/video*`) to make sure the `video0/video1/video2` folders are all there. If not, run `sudo modprobe v4l2loopback video_nr=1,2`. 
+
+Start the flir camera driver:
+```
+$ sudo ./flir1
+```
+
+Plug in the depth camera to a USB 3.0 port (the port *must* be USB 3.0). Navigate to the `librealsense/librealsense` folder. Start the depth camera and save the image frames:
+```
+./bin/cpp-tutorial-2-streams
+```
+
+Images are saved in the `librealsense/librealsense` folder.
